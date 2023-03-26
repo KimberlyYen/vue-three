@@ -13,14 +13,26 @@
 
 
 <div id="hello-vue" class="m-3 p-3 border border-success">
-    <button v-on:click="this.seen = !this.seen"> 顯示設定 </button>
-    <div v-if="seen">能看見我嗎？</div>
+    <button v-on:click="this.seen = !this.seen"> 今天的預定 </button>
+    <hr>
+
+    <ol>
+        <li v-for="item in todos" v-if="seen">
+            {{ item.text }}
+        </li>
+    </ol>
+
 </div>
 <script>
     const HelloVue = {
         data() {
             return {
-                seen: true
+                seen: false,
+                todos: [
+                    { text: '吃飯' },
+                    { text: '睡覺' },
+                    { text: '打遊戲' },
+                ]
             }
         },
     }
