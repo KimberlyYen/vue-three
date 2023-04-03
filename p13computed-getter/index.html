@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>綁定數據</title>
+    <title>取得-計算屬性</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,28 +13,20 @@
       crossorigin="anonymous"
     />
   </head>
-
-  <body>
-    <div id="hello-vue" class="m-3 p-3 border border-success">
-      <div v-bind:title="message">
-        走開！別把手放上來！
-      </div>
+  <body id="hello-vue">
+    <h3>今年破了幾款遊戲</h3>
+    <ol>
+      <li v-for="game in games">
+        {{ game }}
+      </li>
+    </ol>
+    <hr />
+    <div class="lead">
+      數數看我今年一共通過
+      <b class="text-danger">{{ playedGameCount }}</b>
+      款遊戲
     </div>
 
-    <div v-.bind:print="container">
-      Try print
-    </div>
-
-    <script>
-      const HelloVueApp = {
-        data() {
-          return {
-            message: '你好壞!',
-            container: 'print this',
-          }
-        },
-      }
-      Vue.createApp(HelloVueApp).mount('#hello-vue')
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>

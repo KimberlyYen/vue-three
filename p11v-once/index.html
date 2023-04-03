@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模板語法</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body id="hello-vue">
+    <h3>插值語法</h3>
+    <span class="text-primary">{{ message }}</span>
+
+    <hr />
+    <h3>只渲染一次 v-once</h3>
+    <span v-once class="text-danger">{{ message }}</span>
+    <br />
+    <button
+      class="btn btn-info"
+      v-on:click="this.message='不要太悲觀雖然上帝看不到' "
+    >
+      喔？
+    </button>
+
+    <hr />
+    <h3>原始 HTML V-HTML</h3>
+    {{ rawHtml }}
+    <br />
+    <span v-html="rawHtml"></span>
+
+    <hr />
+    <h3>綁定屬性 v-bind:xxx</h3>
+    <button
+      v-bind:disabled="isDisableButton"
+      v-on:click="this.isDisableButton = true "
+      class="btn btn-info"
+    >
+      按我一下吧
+    </button>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
